@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../node_modules/gestalt/dist/gestalt.css";
 import { Box, Text, Switch, IconButton } from "gestalt";
-import Slider, { Range } from "rc-slider";
+import Slider from "rc-slider";
+import axios from "axios";
+
 import "rc-slider/assets/index.css";
 
 const HUE_SERVICE_URL = process.env.REACT_APP_SERVICE_URL + `groups/`;
+let source = axios.CancelToken.source();
 
 class Room extends React.Component {
   constructor(props) {
@@ -14,6 +17,7 @@ class Room extends React.Component {
       switched: false,
       selected: false,
     };
+    this.source = axios.CancelToken.source();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -41,39 +45,44 @@ class Room extends React.Component {
     this.setState({ selected: this.props.room.action.on });
   }
 
+  serviceCall(body) {
+    const config = { headers: { "Content-Type": "application/json" } };
+    axios
+      .put(HUE_SERVICE_URL + this.props.uniqueID + "/action", body, config, {
+        cancelToken: source.token,
+      })
+      .then((res) => {
+        console.log("Here is res.data" + JSON.stringify(res.data));
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
+  }
+
   onSliderChange = (count) => {
     if (count !== this.state.sliderCount) {
       this.setState({ sliderCount: count });
     }
-    fetch(HUE_SERVICE_URL + this.props.uniqueID + "/action", {
-      method: "put",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        bri: count,
-      }),
+    const body = JSON.stringify({
+      bri: count,
     });
+    this.serviceCall(body);
   };
 
   onColorLoopChange = () => {
-    fetch(HUE_SERVICE_URL + this.props.uniqueID + "/action", {
-      method: "put",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        effect: !this.state.switched ? "colorloop" : "none",
-        sat: !this.state.switched ? 254 : 0,
-      }),
+    const body = JSON.stringify({
+      effect: !this.state.switched ? "colorloop" : "none",
+      sat: !this.state.switched ? 254 : 0,
     });
+    this.serviceCall(body);
     this.setState({ switched: !this.state.switched });
   };
 
   onPowerStateChange = () => {
-    fetch(HUE_SERVICE_URL + this.props.uniqueID + "/action", {
-      method: "put",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        on: !this.state.selected,
-      }),
+    const body = JSON.stringify({
+      on: !this.state.selected,
     });
+    this.serviceCall(body);
     this.setState({ selected: !this.state.selected });
   };
 
@@ -108,10 +117,11 @@ class Room extends React.Component {
           </Text>
           <Box paddingY={4}></Box>
           <Slider
-            min={1}
-            max={254}
+            min={0}
+            max={255}
             onChange={this.onSliderChange}
             value={this.state.sliderCount}
+            step={5}
           />
         </Box>
         <Box paddingX={4} alignItems="top">

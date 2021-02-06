@@ -1,11 +1,11 @@
 import "./App.css";
 import axios from "axios";
-import { Component } from "react";
+import { Component, PureComponent } from "react";
 import { RoomGroup } from "./component/room-group/room-group.component";
 
 const HUE_SERVICE_URL = process.env.REACT_APP_SERVICE_URL;
 
-class App extends Component {
+class App extends PureComponent {
   constructor() {
     super();
 
@@ -20,7 +20,7 @@ class App extends Component {
   componentDidMount() {
     require('dotenv').config();
     this.loadData(); // also load one immediately
-    this.timer = setInterval(() => this.loadDateWithAxiosandAsync(), 2000000);
+    this.timer = setInterval(() => this.loadDateWithAxiosandAsync(), 200);
   }
 
   componentWillUnmount() {
@@ -32,7 +32,9 @@ class App extends Component {
     try {
       this.setState({ ...this.state, isFetching: true });
       const res = await axios.get(HUE_SERVICE_URL)
-      this.setState({ lights: res.data.lights, groups: res.data.groups, scenes:res.data.scenes, isFetching: true });
+      // only using groups at the moment
+      // this.setState({ lights: res.data.lights, groups: res.data.groups, scenes:res.data.scenes, isFetching: true });
+      this.setState({ groups: res.data.groups, isFetching: true }); 
     }
       catch (e) {
         console.log(e);
@@ -68,6 +70,7 @@ class App extends Component {
 
   render() {
     const { groups } = this.state;
+    //console.log(groups)
     return (
       <div className="App">
         <RoomGroup groups={groups} />
