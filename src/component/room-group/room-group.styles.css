@@ -1,0 +1,5 @@
+.room-group {
+  ddisplay: flex;
+  djustify-content: center;
+  dflex-direction: column;  /* <--- I added this */
+}
