@@ -105,9 +105,7 @@ class Room extends React.Component {
           <IconButton
             accessibilityLabel="Open edit modal to edit Board"
             icon="check"
-            onClick={() => {
-              this.onPowerStateChange();
-            }}
+            onClick={this.onPowerStateChange}
             selected={this.state.selected}
           />
         </Box>
@@ -130,9 +128,7 @@ class Room extends React.Component {
           </Text>
           <Box paddingY={3}></Box>
           <Switch
-            onChange={() => {
-              this.onColorLoopChange();
-            }}
+            onChange={this.onColorLoopChange}
             id="colorLoop"
             switched={this.state.switched}
           />
