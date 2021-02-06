@@ -1,6 +1,6 @@
 import "./App.css";
 import axios from "axios";
-import { Component, PureComponent } from "react";
+import { PureComponent } from "react";
 import { RoomGroup } from "./component/room-group/room-group.component";
 
 const HUE_SERVICE_URL = process.env.REACT_APP_SERVICE_URL;
