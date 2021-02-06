@@ -1,4 +1,31 @@
-# Getting Started with Create React App
+Here is a project I started so that I could learn React and the Hue bridge RestAPI.  
+
+This app will query the Hue bridge for all groups then filter out the group type of 'room' then display those rooms in a room component.  Hue-home-lights app is currently using the Gestalt component library from Pinterest for most of the atom controls and the rc-slider for the slide control
+
+
+<img src="three-rooms.png"
+     alt="Markdown Monster icon"
+     style="padding: 25px; width: 294px; height:215px" />
+
+
+# TO DO BELOW
+## Getting Started
+ - add getting hue bridge info
+   - create a user 
+ - How to make hue bridge a static IP
+
+## Installation
+
+Contributing
+
+````
+Need to add license file
+``````
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
