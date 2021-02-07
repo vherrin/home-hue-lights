@@ -1,97 +1,77 @@
-Here is a project I started so that I could learn React and the Hue bridge RestAPI.  
+# Project Title
 
-This app will query the Hue bridge for all groups then filter out the group type of 'room' then display those rooms in a room component.  Hue-home-lights app is currently using the Gestalt component library from Pinterest for most of the atom controls and the rc-slider for the slide control
+## Hue Home Lights App 
 
+Here is a project I started so that I could learn React and the Hue bridge api.  
 
-<img src="three-rooms.png"
+This app will query the Hue bridge for all groups then filter out the group type of 'room' then display those rooms in a room component.  Hue-home-lights app is currently using the Gestalt component library from Pinterest for most of the atom controls and the rc-slider slide control to change the brightness.  
+
+<img src="./src/images/three-rooms.png"
      alt="Markdown Monster icon"
-     style="padding: 25px; width: 294px; height:215px" />
+     style="padding: 25px; width: 394px; height:280px" />
 
 
-# TO DO BELOW
 ## Getting Started
- - add getting hue bridge info
-   - create a user 
- - How to make hue bridge a static IP
 
-## Installation
+The instructions below will get you a copy of the project running on your local machine for development. 
 
-Contributing
+**Cloning and running the project**
+```zsh
+git clone https://github.com/vherrin/hue-home-lights.git
+yarn 
+yarn start
+``` 
 
-````
-Need to add license file
-``````
+### Prerequisites
+
+First you need to find the hue bridge ip so that you can create a userId.  The user This can be done several ways. I will walk you through the hue app version to get the ip but provide some links to the other ways I have discovered.
+
+Open the hue app on your mobile device.  The pictures show the iPhone version.
+  - Go to settings tab
+  - Select Hue Bridges
+  - Select the information icon and get the ip 
+
+<div> </div>
+<p float="left">
+  <img src="./src/images/IMG_5059.png" style="margin: 8px; width: 220px; height:440px" />
+  <img src="./src/images/IMG_5060.png" style="margin: 8px; width: 220px; height:440px" />
+  <img src="./src/images/IMG_5062.png" style="margin: 8px; width: 220px; height:440px" />
+</p>
+
+### Other ways to discover
+
+This link will discover your hue bridge and display the IP
+https://discovery.meethue.com/
+
+This site shows several ways to discover
+https://developers.meethue.com/develop/application-design-guidance/hue-bridge-discovery/
 
 
+### Getting to know the Hue bridge API 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Once you get the IP then you need to generate a user name so that you can use the Hue bridge API.  This is simple enough and you can find the instructions in the link below.  Basically it requires you to hit a specific call to the bridge when the bridge button has been pushed to generate a user name.  There is a simple test web app built into every Hue bridge which lets you directly input commands and send them to the lights.  I personally used insomnia the free version to create and save off the api calls from learning and testing.
+
+Here is a quick picture of the built-in bridge test app
+
+<img src="https://developers.meethue.com/wp-content/uploads/2018/02/response.png" style="margin: 8px; width: 400px; height:440px">
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Getting started with Hue development](https://developers.meethue.com/develop/get-started-2/)
 
-## Available Scripts
+[Insomnia API Client](https://insomnia.rest/)
 
-In the project directory, you can run:
+### Future Work Planned
 
-### `yarn start`
+* add scenes so that each room can drill down and set a defined scene
+* add color loop to a specific light and not just a room
+* visual updates and clean-up
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Authors
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* *Vince Herrin* - *Initial work* - [Vince](https://github.com/vherrin)
 
-### `yarn test`
+## License
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
