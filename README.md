@@ -33,7 +33,7 @@ Open the hue app on your mobile device.  The pictures show the iPhone version.
 
 <div> </div>
 <p float="left">
-  <img src="./src/images/img-5059.png" style="margin: 8px; width: 220px; height:440px" />
+  <img src="./src/images/img-5059.png" style="margin:8px; width: 220px; height:440px" />
   <img src="./src/images/IMG_5060.png" style="margin: 8px; width: 220px; height:440px" />
   <img src="./src/images/IMG_5062.png" style="margin: 8px; width: 220px; height:440px" />
 </p>
