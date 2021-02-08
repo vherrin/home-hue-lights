@@ -32,10 +32,10 @@ Open the hue app on your mobile device.  The pictures show the iPhone version.
   - Select the information icon and get the ip 
 
 <p float="left">
-  <img src="./src/images/img-5059.png" width=25% />
-  <img src="./src/images/img-5060.png" width=25% />
-  <img src="./src/images/img-5062.png" width=25% />
-  <img src="./src/images/img-5063.png" width=25% />
+  <img src="./src/images/img-5059.png" width=24% />
+  <img src="./src/images/img-5060.png" width=24% />
+  <img src="./src/images/img-5062.png" width=24% />
+  <img src="./src/images/img-5063.png" width=24% />
 
 </p>
 
