@@ -22,6 +22,14 @@ yarn
 yarn start
 ``` 
 
+### ENV file
+This project expects an environment file, .env file, in the root of the project.  This file currently only have one line which contains the bridge IP and the unique user name that you generated in the following steps below.  Please note this file is only read in when start the app so if you created while it is already running then it will not work.  Just restart the app. 
+
+.env (file in the root of project)
+```
+REACT_APP_SERVICE_URL=http://192.168.9.197/YOUR_UNIQUE_USER_NAME_FROM_BRIDGE/
+```
+
 ### Prerequisites
 
 First you need to find the hue bridge ip so that you can create a unique user name that the bridge will accept.  This can be done several ways. Below is a flow in the hue app version to get the ip.  There are also some links to the other ways I have discovered below. 
