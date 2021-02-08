@@ -24,8 +24,8 @@ class Room extends React.Component {
     if (prevProps.room.action.on !== this.state.selected) {
       this.setState({ selected: !this.state.selected });
     }
-    if (
-      prevProps.room.action.effect === "colorloop" &&
+
+    if (prevProps.room.action.effect === "colorloop" &&
       this.state.switched === false
     ) {
       this.setState({ switched: true });
@@ -35,6 +35,11 @@ class Room extends React.Component {
     ) {
       this.setState({ switched: false });
     }
+
+    if (prevProps.room.action.bri !== this.state.sliderCount ) {
+      this.setState({sliderCount: prevProps.room.action.bri})
+    }
+
   }
 
   componentDidMount() {
