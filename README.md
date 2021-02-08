@@ -31,11 +31,13 @@ Open the hue app on your mobile device.  The pictures show the iPhone version.
   - Select Hue Bridges
   - Select the information icon and get the ip 
 
+<p float="left">
+  <img src="./src/images/img-5059.png" width=25% />
+  <img src="./src/images/img_5060.png" width=25% />
+  <img src="./src/images/img_5062.png" width=25% />
+  <img src="./src/images/img_5063.png" width=25% />
 
-  <img src="./src/images/img-5059.png" width=200px />
-  <img src="./src/images/IMG_5060.PNG" width=200px />
-  <img src="./src/images/IMG_5062.PNG" width=200px />
-
+</p>
 
 ### Other ways to discover
 
