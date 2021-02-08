@@ -38,7 +38,7 @@ Open the hue app on your mobile device.  The pictures show the iPhone version.
   - Go to settings tab
   - Select Hue Bridges
   - Select the information icon and get the ip 
-  - Select Network settings to edit the information to make the hue bridge a static IP
+  - Select Network Settings to edit the information such as making the hue bridge have a static IP
 
 <p float="left">
   <img src="./src/images/img-5059.png" width=24% />
