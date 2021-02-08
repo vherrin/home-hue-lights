@@ -23,11 +23,11 @@ yarn start
 ``` 
 
 ### ENV file
-This project expects an environment file, .env file, in the root of the project.  This file currently only have one line which contains the bridge IP and the unique user name that you generated in the following steps below.  Please note this file is only read in when start the app so if you created while it is already running then it will not work.  Just restart the app. 
+This project expects an environment file, .env file, in the root of the project.  This file currently only has one line which contains the bridge IP and the unique user name that you generated in the following steps below.  Please note this file is only read in when starting the app so if you created it while the app is already running then it will not work.  Just restart the app to read it in. 
 
 .env (file in the root of project)
 ```
-REACT_APP_SERVICE_URL=http://192.168.9.197/YOUR_UNIQUE_USER_NAME_FROM_BRIDGE/
+REACT_APP_SERVICE_URL=http://YOUR_HUE_BRIDGE_IP/YOUR_UNIQUE_USER_NAME_FROM_BRIDGE/
 ```
 
 ### Prerequisites
