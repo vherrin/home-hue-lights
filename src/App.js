@@ -20,7 +20,7 @@ class App extends PureComponent {
   componentDidMount() {
     require('dotenv').config();
     this.loadData(); // also load one immediately
-    this.timer = setInterval(() => this.loadDateWithAxiosandAsync(), 200);
+    this.timer = setInterval(() => this.loadDataWithAxiosandAsync(), 200);
   }
 
   componentWillUnmount() {
@@ -28,7 +28,7 @@ class App extends PureComponent {
     this.timer = null;
   }
 
-  async loadDateWithAxiosandAsync() {
+  async loadDataWithAxiosandAsync() {
     try {
       this.setState({ ...this.state, isFetching: true });
       const res = await axios.get(HUE_SERVICE_URL)
@@ -42,7 +42,7 @@ class App extends PureComponent {
        };
   };
 
-  loadDateWithAxios = () => {
+  loadDataWithAxios = () => {
     this.setState({ ...this.state, isFetching: true });
 
     axios
@@ -56,6 +56,7 @@ class App extends PureComponent {
       });
   };
 
+  /// TODO - remove fetch and use axios
   loadData() {
     fetch(HUE_SERVICE_URL)
       .then((response) => response.json())
