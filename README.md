@@ -24,12 +24,13 @@ yarn start
 
 ### Prerequisites
 
-First you need to find the hue bridge ip so that you can create a userId.  The user This can be done several ways. I will walk you through the hue app version to get the ip but provide some links to the other ways I have discovered.
+First you need to find the hue bridge ip so that you can create a unique user name that the bridge will accept.  This can be done several ways. Below is a flow in the hue app version to get the ip.  There are also some links to the other ways I have discovered below. 
 
 Open the hue app on your mobile device.  The pictures show the iPhone version.
   - Go to settings tab
   - Select Hue Bridges
   - Select the information icon and get the ip 
+  - Select Network settings to edit the information to make the hue bridge a static IP
 
 <p float="left">
   <img src="./src/images/img-5059.png" width=24% />
